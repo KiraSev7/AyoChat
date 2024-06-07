@@ -1,6 +1,11 @@
-# Responsive Chat App
+# Responsive Chat App (Beta Version)
 
 ![Chat App](https://img.shields.io/badge/Chat%20App-Responsive-blue)
+![Version](https://img.shields.io/badge/Version-Beta-orange)
+![HTML](https://img.shields.io/badge/HTML-5-red)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple)
+![Firebase](https://img.shields.io/badge/Firebase-Realtime%20Database-yellow)
 
 ## Overview
 This is a simple responsive chat application built using HTML, CSS, Bootstrap, and Firebase Realtime Database. It allows users to send and receive messages in real-time.
@@ -12,10 +17,10 @@ This is a simple responsive chat application built using HTML, CSS, Bootstrap, a
 - **Dynamic UI**: Messages are displayed dynamically without page reload.
 
 ## Technologies Used
-- HTML
-- CSS
-- Bootstrap 5.3
-- Firebase Realtime Database
+- HTML ![HTML](https://img.shields.io/badge/-HTML-red)
+- CSS ![CSS](https://img.shields.io/badge/-CSS-blue)
+- Bootstrap ![Bootstrap](https://img.shields.io/badge/-Bootstrap-purple)
+- Firebase Realtime Database ![Firebase](https://img.shields.io/badge/-Firebase-yellow)
 
 ## How to Use
 1. Clone the repository.
