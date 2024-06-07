@@ -29,7 +29,7 @@ This is a simple responsive chat application built using HTML, CSS, Bootstrap, a
 4. Start sending and receiving messages!
 
 ## Screenshots
-![Chat App Screenshot](/screenshots/chat_app_screenshot.png)
+![Chat App Screenshot](/screenshots/AyoChat.png)
 
 ## Demo
 [Live Demo](https://your-live-demo-link)
