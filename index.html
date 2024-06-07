@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern & Classic Chat App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #chat-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #chat-window {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chat-output {
+            flex: 1;
+            overflow-y: scroll;
+            padding-bottom: 10px;
+        }
+
+        #user-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-top: 10px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        #send-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 20px;
+
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-window">
+            <div id="chat-output"></div>
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Function to display chat messages
+        function displayChatMessage(message) {
+            const chatOutput = document.getElementById('chat-output');
+            const p = document.createElement('p');
+            p.textContent = message;
+            chatOutput.appendChild(p);
+        }
+
+        // Event listener for sending message
+        document.getElementById('send-button').addEventListener('click', () => {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() !== '') {
+                socket.emit('chat message', userInput);
+                document.getElementById('user-input').value = '';
+            }
+        });
+
+        // Listen for incoming chat messages
+        socket.on('chat message', (message) => {
+            displayChatMessage(message);
+        });
+    </script>
+</body>
+</html>
